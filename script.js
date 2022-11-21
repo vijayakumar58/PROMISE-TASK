@@ -23,4 +23,5 @@ const covid= new Promise((resolve, reject) => {
        }
     }
 })
-covid.then((res)=>{console.log(res)}).catch((rej)=>{console.log(rej)})
+covid.then((res)=>{console.log(res.rawData)}).catch((rej)=>{console.log(rej)});
+
