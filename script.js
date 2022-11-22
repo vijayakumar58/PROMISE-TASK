@@ -17,16 +17,19 @@ let divc=document.createElement("div");
 divc.setAttribute("class","container");
 let tab =document.createElement("table");
 tab.setAttribute("class","table table-striped table-dark");
-tab.innerHTML=` <thead>
-<tr>
-  <th scope="col">#</th>
-  <th scope="col">Country Name</th>
-  <th scope="col">Conformed Cases</th>
-  <th scope="col">Death</th>
-  <th scope="col">Case_Fatality_Ratio</th>
-  <th scope="col">Incident_Rate</th>
-</tr>
-</thead>`
+tab.innerHTML=`<thead>
+                  <tr>
+                      <th scope="col">#</th>
+                      <th scope="col">Country Name</th>
+                      <th scope="col">Conformed Cases</th>
+                      <th scope="col">Death</th>
+                      <th scope="col">Case_Fatality_Ratio</th>
+                      <th scope="col">Incident_Rate</th>
+                  </tr>
+               </thead>`
+const tbody=document.createElement("tbody")
+tbody.setAttribute("class","tbod");
+tab.append(tbody);
 divc.append(tab);
 document.body.append(divc);
 
@@ -45,7 +48,14 @@ const covid= new Promise((resolve, reject) => {
 })
 covid.then((res)=>{console.log(res.rawData)
 res.rawData.map((ele)=>{
-tab.innerHTML+=`<p>Country Name :${ele.Combined_Key}, Conformed Cases :${ele.Confirmed}, Death :${ele.Deaths}, Case_Fatality_Ratio :${ele.Case_Fatality_Ratio}, Incident_Rate :${ele.Incident_Rate}.</p>`
+  // tbody.innerHTML+=` <tr>
+  //                     <td>${ele.Combined_Key}</td>
+  //                     <td>${ele.Confirmed}</td>
+  //                     <td>${ele.Deaths}</td>
+  //                     <td>${ele.Case_Fatality_Ratio}</td>
+  //                     <td>${ele.Incident_Rate}</td>
+  //                   </tr>`
+div.innerHTML+=`<p>Country Name :${ele.Combined_Key}, Conformed Cases :${ele.Confirmed}, Death :${ele.Deaths}, Case_Fatality_Ratio :${ele.Case_Fatality_Ratio}, Incident_Rate :${ele.Incident_Rate}.</p>`
     })
 })
 .catch((rej)=>{console.log(rej)});
