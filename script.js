@@ -7,9 +7,10 @@ let nav=document.createElement("nav")
 nav.setAttribute("id","nav")
 nav.setAttribute("class","navbar navbar-light bg-info")
 let ptag=document.createElement("p");
-ptag.innerHTML="Wait for 30sec Display the details"
-nav.append(ptag);
+ptag.setAttribute("id","pta")
+ptag.innerHTML="<br>(Wait for 30sec Display the details)"
 nav.append(head);
+nav.append(ptag);
 div.append(nav);
 document.body.append(div);
 
