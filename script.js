@@ -13,6 +13,22 @@ nav.append(head);
 nav.append(ptag);
 div.append(nav);
 document.body.append(div);
+let divc=document.createElement("div");
+divc.setAttribute("class","container");
+let tab =document.createElement("table");
+tab.setAttribute("class","table table-striped table-dark");
+tab.innerHTML=` <thead>
+<tr>
+  <th scope="col">#</th>
+  <th scope="col">Country Name</th>
+  <th scope="col">Conformed Cases</th>
+  <th scope="col">Death</th>
+  <th scope="col">Case_Fatality_Ratio</th>
+  <th scope="col">Incident_Rate</th>
+</tr>
+</thead>`
+divc.append(tab);
+document.body.append(divc);
 
 const covid= new Promise((resolve, reject) => {
     let request = new XMLHttpRequest();
@@ -26,14 +42,11 @@ const covid= new Promise((resolve, reject) => {
         reject("some error not found")
        }
     }
-    
 })
 covid.then((res)=>{console.log(res.rawData)
 res.rawData.map((ele)=>{
-div.innerHTML+=`<p>Country Name :${ele.Combined_Key}, Conformed Cases :${ele.Confirmed}, Death :${ele.Deaths}, Case_Fatality_Ratio :${ele.Case_Fatality_Ratio}, Incident_Rate :${ele.Incident_Rate}.</p>`
+tab.innerHTML+=`<p>Country Name :${ele.Combined_Key}, Conformed Cases :${ele.Confirmed}, Death :${ele.Deaths}, Case_Fatality_Ratio :${ele.Case_Fatality_Ratio}, Incident_Rate :${ele.Incident_Rate}.</p>`
     })
-
-
 })
 .catch((rej)=>{console.log(rej)});
  
