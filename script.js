@@ -19,7 +19,6 @@ let tab =document.createElement("table");
 tab.setAttribute("class","table table-striped table-dark");
 tab.innerHTML=`<thead>
                   <tr>
-                      <th scope="col">#</th>
                       <th scope="col">Country Name</th>
                       <th scope="col">Conformed Cases</th>
                       <th scope="col">Death</th>
@@ -49,7 +48,6 @@ const covid= new Promise((resolve, reject) => {
 covid.then((res)=>{console.log(res.rawData)
 res.rawData.map((ele)=>{
   tbody.innerHTML+=` <tr>
-                      <th scope="row">${ele.index}</th>
                       <td>${ele.Combined_Key}</td>
                       <td>${ele.Confirmed}</td>
                       <td>${ele.Deaths}</td>
