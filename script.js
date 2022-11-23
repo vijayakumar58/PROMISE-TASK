@@ -56,8 +56,7 @@ res.rawData.map((ele)=>{
                       <td>${ele.Case_Fatality_Ratio}</td>
                       <td>${ele.Incident_Rate}</td>
                     </tr>`
-//div.innerHTML+=`<p>Country Name :${ele.Combined_Key}, Conformed Cases :${ele.Confirmed}, Death :${ele.Deaths}, Case_Fatality_Ratio :${ele.Case_Fatality_Ratio}, Incident_Rate :${ele.Incident_Rate}.</p>`
-    })
+                 })
 })
 .catch((rej)=>{console.log(rej)});
  
