@@ -14,7 +14,7 @@ nav.append(ptag);
 div.append(nav);
 document.body.append(div);
 let divc=document.createElement("div");
-divc.setAttribute("class","container");
+divc.setAttribute("class","container-fluid");
 let tab =document.createElement("table");
 tab.setAttribute("class","table table-striped table-dark");
 tab.innerHTML=`<thead>
@@ -48,14 +48,15 @@ const covid= new Promise((resolve, reject) => {
 })
 covid.then((res)=>{console.log(res.rawData)
 res.rawData.map((ele)=>{
-  // tbody.innerHTML+=` <tr>
-  //                     <td>${ele.Combined_Key}</td>
-  //                     <td>${ele.Confirmed}</td>
-  //                     <td>${ele.Deaths}</td>
-  //                     <td>${ele.Case_Fatality_Ratio}</td>
-  //                     <td>${ele.Incident_Rate}</td>
-  //                   </tr>`
-div.innerHTML+=`<p>Country Name :${ele.Combined_Key}, Conformed Cases :${ele.Confirmed}, Death :${ele.Deaths}, Case_Fatality_Ratio :${ele.Case_Fatality_Ratio}, Incident_Rate :${ele.Incident_Rate}.</p>`
+  tbody.innerHTML+=` <tr>
+                      <th scope="row">1</th>
+                      <td>${ele.Combined_Key}</td>
+                      <td>${ele.Confirmed}</td>
+                      <td>${ele.Deaths}</td>
+                      <td>${ele.Case_Fatality_Ratio}</td>
+                      <td>${ele.Incident_Rate}</td>
+                    </tr>`
+//div.innerHTML+=`<p>Country Name :${ele.Combined_Key}, Conformed Cases :${ele.Confirmed}, Death :${ele.Deaths}, Case_Fatality_Ratio :${ele.Case_Fatality_Ratio}, Incident_Rate :${ele.Incident_Rate}.</p>`
     })
 })
 .catch((rej)=>{console.log(rej)});
