@@ -8,7 +8,7 @@ nav.setAttribute("id","nav")
 nav.setAttribute("class","navbar navbar-light bg-info")
 let ptag=document.createElement("p");
 ptag.setAttribute("id","pta")
-ptag.innerHTML="<br>(Wait for 30sec Display the details)"
+ptag.innerHTML="<br>(Wait for 40sec Display the details)"
 nav.append(head);
 nav.append(ptag);
 div.append(nav);
@@ -49,7 +49,7 @@ const covid= new Promise((resolve, reject) => {
 covid.then((res)=>{console.log(res.rawData)
 res.rawData.map((ele)=>{
   tbody.innerHTML+=` <tr>
-                      <th scope="row">1</th>
+                      <th scope="row">${ele.index}</th>
                       <td>${ele.Combined_Key}</td>
                       <td>${ele.Confirmed}</td>
                       <td>${ele.Deaths}</td>
