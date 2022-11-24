@@ -1,4 +1,5 @@
 let div=document.createElement("div");
+div.setAttribute("class","container-fluid");
 div.setAttribute("id","division");
 let head=document.createElement("h1");
 head.setAttribute("id","hd");
